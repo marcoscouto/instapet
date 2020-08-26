@@ -1,5 +1,6 @@
 package com.github.marcoscouto.instapetzup.services;
 
+import com.github.marcoscouto.instapetzup.dto.PetDTO;
 import com.github.marcoscouto.instapetzup.models.Pet;
 
 import java.util.List;
@@ -11,9 +12,11 @@ public interface PetServiceInterface {
 
     Pet findById(UUID id);
 
-    Pet save(Pet pet);
+    Pet save(PetDTO pet);
 
-    Pet update(UUID id, Pet pet);
+    Pet update(UUID id, PetDTO pet);
+
+    Pet update(Pet pet);
 
     void delete(UUID id);
 }

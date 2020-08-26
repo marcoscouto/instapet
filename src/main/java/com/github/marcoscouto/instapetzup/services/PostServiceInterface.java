@@ -1,6 +1,6 @@
 package com.github.marcoscouto.instapetzup.services;
 
-import com.github.marcoscouto.instapetzup.models.Pet;
+import com.github.marcoscouto.instapetzup.dto.PostDTO;
 import com.github.marcoscouto.instapetzup.models.Post;
 
 import java.util.List;
@@ -10,13 +10,13 @@ public interface PostServiceInterface {
 
     List<Post> findAll();
 
-    List<Post> findByAuthor(Pet pet);
+    List<Post> findByAuthor(UUID id);
 
     Post findById(UUID id);
 
-    Post save(Post post);
+    Post save(PostDTO post);
 
-    Post update(UUID id, Post post);
+    Post update(UUID id, PostDTO post);
 
     void delete(UUID id);
 }

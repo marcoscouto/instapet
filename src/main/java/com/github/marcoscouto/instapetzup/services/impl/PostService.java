@@ -1,5 +1,6 @@
 package com.github.marcoscouto.instapetzup.services.impl;
 
+import com.github.marcoscouto.instapetzup.dto.PostDTO;
 import com.github.marcoscouto.instapetzup.exceptions.NotFoundException;
 import com.github.marcoscouto.instapetzup.models.Pet;
 import com.github.marcoscouto.instapetzup.models.Post;
@@ -8,6 +9,7 @@ import com.github.marcoscouto.instapetzup.services.PostServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.UUID;
 
@@ -15,39 +17,56 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class PostService implements PostServiceInterface {
 
-    private final PostRepository repository;
+    private final PostRepository postRepository;
+    private final PetService petService;
 
     @Override
     public List<Post> findAll() {
-        return repository.findAll();
+        return postRepository.findAll();
     }
 
     @Override
-    public List<Post> findByAuthor(Pet pet) {
-        return repository.findByAuthor(pet);
+    public List<Post> findByAuthor(UUID id) {
+        Pet pet = petService.findById(id);
+        return postRepository.findByAuthor(pet);
     }
 
     @Override
     public Post findById(UUID id) {
-        return repository.findById(id)
+        return postRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Post não encontrado - Id: " + id));
     }
 
     @Override
-    public Post save(Post post) {
-        post.setId(null);
-        return repository.save(post);
+    public Post save(PostDTO dto) {
+        return postRepository.save(dtoToPost(dto));
     }
 
     @Override
-    public Post update(UUID id, Post post) {
-        findById(id);
-        post.setId(id);
-        return repository.save(post);
+    public Post update(UUID id, PostDTO dto) {
+        Post post = findById(id);
+        return postRepository.save(dtoToPost(post, dto));
     }
 
     @Override
     public void delete(UUID id) {
-        repository.deleteById(id);
+        postRepository.deleteById(id);
+    }
+
+    private Post dtoToPost(Post post, PostDTO dto){
+        post.setTitle(dto.getTitle());
+        post.setText(dto.getText());
+        Pet author = petService.findById(dto.getAuthor());
+        post.setAuthor(author);
+        return post;
+    }
+
+    private Post dtoToPost(PostDTO dto){
+        Post post = new Post();
+        post.setTitle(dto.getTitle());
+        post.setText(dto.getText());
+        Pet author = petService.findById(dto.getAuthor());
+        post.setAuthor(author);
+        return post;
     }
 }

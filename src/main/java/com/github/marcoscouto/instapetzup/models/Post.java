@@ -5,9 +5,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -20,19 +18,18 @@ public class Post {
     @GeneratedValue(generator = "uuid4")
     private UUID id;
 
-    @NotBlank(message = "Título é obrigatório")
     private String title;
 
-    @NotBlank(message = "Texto é obrigatório")
+    //@Lob
     private String text;
 
     private Integer likes;
 
-    @ElementCollection
-    @CollectionTable(name = "tb_comments", joinColumns = @JoinColumn(name = "post_id"))
-    @Column(name = "comment")
-    private List<String> comments;
-
     @CreatedDate
     private LocalDateTime timestamp;
+
+    @ManyToOne
+    @JoinColumn(name = "pet_id")
+    private Pet author;
+
 }

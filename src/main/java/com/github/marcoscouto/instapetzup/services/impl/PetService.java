@@ -1,5 +1,6 @@
 package com.github.marcoscouto.instapetzup.services.impl;
 
+import com.github.marcoscouto.instapetzup.dto.PetDTO;
 import com.github.marcoscouto.instapetzup.exceptions.NotFoundException;
 import com.github.marcoscouto.instapetzup.models.Pet;
 import com.github.marcoscouto.instapetzup.repositories.PetRepository;
@@ -14,36 +15,57 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class PetService implements PetServiceInterface {
 
-    private final PetRepository repository;
+    private final PetRepository petRepository;
 
     @Override
     public List<Pet> findAll() {
-        return repository.findAll();
+        return petRepository.findAll();
     }
 
     @Override
     public Pet findById(UUID id) {
-        return repository.findById(id)
+        return petRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Pet não encontrado - Id: " + id));
     }
 
     @Override
-    public Pet save(Pet pet) {
-        pet.setId(null);
-        return repository.save(pet);
+    public Pet save(PetDTO dto) {
+        return petRepository.save(dtoToPet(dto));
     }
 
     @Override
-    public Pet update(UUID id, Pet pet) {
-        findById(id);
-        pet.setId(id);
-        return repository.save(pet);
+    public Pet update(UUID id, PetDTO dto) {
+        Pet pet = findById(id);
+        return petRepository.save(dtoToPet(pet, dto));
+    }
+
+    public Pet update(Pet pet) {
+        return petRepository.save(pet);
     }
 
     @Override
     public void delete(UUID id) {
         findById(id);
-        repository.deleteById(id);
+        petRepository.deleteById(id);
+    }
+
+    public Pet dtoToPet(PetDTO dto){
+        Pet pet = new Pet();
+        pet.setName(dto.getName());
+        pet.setBirthdate(dto.getBirthdate());
+        pet.setBreed(dto.getBreed());
+        pet.setGender(dto.getGender());
+        pet.setType(dto.getType());
+        return pet;
+    }
+
+    public Pet dtoToPet(Pet pet, PetDTO dto){
+        pet.setName(dto.getName());
+        pet.setBirthdate(dto.getBirthdate());
+        pet.setBreed(dto.getBreed());
+        pet.setGender(dto.getGender());
+        pet.setType(dto.getType());
+        return pet;
     }
 
 
