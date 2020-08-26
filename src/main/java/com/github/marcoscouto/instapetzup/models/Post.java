@@ -20,7 +20,7 @@ public class Post {
 
     private String title;
 
-    //@Lob
+    @Lob
     private String text;
 
     private Integer likes;
