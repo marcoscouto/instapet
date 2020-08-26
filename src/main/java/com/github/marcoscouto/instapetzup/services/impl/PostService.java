@@ -53,7 +53,7 @@ public class PostService implements PostServiceInterface {
         postRepository.deleteById(id);
     }
 
-    private Post dtoToPost(Post post, PostDTO dto){
+    public Post dtoToPost(Post post, PostDTO dto){
         post.setTitle(dto.getTitle());
         post.setText(dto.getText());
         Pet author = petService.findById(dto.getAuthor());
@@ -61,7 +61,7 @@ public class PostService implements PostServiceInterface {
         return post;
     }
 
-    private Post dtoToPost(PostDTO dto){
+    public Post dtoToPost(PostDTO dto){
         Post post = new Post();
         post.setTitle(dto.getTitle());
         post.setText(dto.getText());
