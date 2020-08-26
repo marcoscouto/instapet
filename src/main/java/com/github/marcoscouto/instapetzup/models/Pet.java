@@ -1,5 +1,6 @@
 package com.github.marcoscouto.instapetzup.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,6 @@ import java.util.UUID;
 @Table(name = "tb_pets")
 @Data
 @NoArgsConstructor
-//@Builder
 public class Pet {
 
     @Id
@@ -41,8 +41,8 @@ public class Pet {
     private LocalDate birthdate;
 
     @ElementCollection
-    @CollectionTable(name="tb_friends", joinColumns = @JoinColumn(name = "friend_id"))
-    @Column(name = "friends")
+    @CollectionTable(name="tb_friends", joinColumns = @JoinColumn(name = "pet_id"))
+    @Column(name = "friend")
     private Set<UUID> friends = new HashSet<>();
 
 }
