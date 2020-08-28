@@ -19,4 +19,8 @@ public interface PostServiceInterface {
     Post update(UUID id, PostDTO post);
 
     void delete(UUID id);
+
+    void like(UUID id);
+
+    void dislike(UUID id);
 }

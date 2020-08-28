@@ -1,7 +1,9 @@
 package com.github.marcoscouto.instapetzup.utils;
 
+import com.github.marcoscouto.instapetzup.models.Comment;
 import com.github.marcoscouto.instapetzup.models.Pet;
 import com.github.marcoscouto.instapetzup.models.Post;
+import com.github.marcoscouto.instapetzup.repositories.CommentRepository;
 import com.github.marcoscouto.instapetzup.repositories.PetRepository;
 import com.github.marcoscouto.instapetzup.repositories.PostRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +19,7 @@ public class DatabasePopulate implements CommandLineRunner {
 
     private final PetRepository petRepository;
     private final PostRepository postRepository;
+    private final CommentRepository commentRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -68,6 +71,19 @@ public class DatabasePopulate implements CommandLineRunner {
                 post1,
                 post2
         ));
+
+        // COMMENTS
+
+        Comment comment1 = new Comment();
+        comment1.setPost(post1);
+        comment1.setAuthor(pet2);
+        comment1.setText("Show de bola!");
+
+        commentRepository.save(comment1);
+
+        post1.getComments().add(comment1);
+        postRepository.save(post1);
+
 
     }
 }

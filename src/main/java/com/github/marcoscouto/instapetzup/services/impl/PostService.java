@@ -2,6 +2,7 @@ package com.github.marcoscouto.instapetzup.services.impl;
 
 import com.github.marcoscouto.instapetzup.dto.PostDTO;
 import com.github.marcoscouto.instapetzup.exceptions.NotFoundException;
+import com.github.marcoscouto.instapetzup.exceptions.OperationNotAllowed;
 import com.github.marcoscouto.instapetzup.models.Pet;
 import com.github.marcoscouto.instapetzup.models.Post;
 import com.github.marcoscouto.instapetzup.repositories.PostRepository;
@@ -9,7 +10,6 @@ import com.github.marcoscouto.instapetzup.services.PostServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.UUID;
 
@@ -51,6 +51,22 @@ public class PostService implements PostServiceInterface {
     @Override
     public void delete(UUID id) {
         postRepository.deleteById(id);
+    }
+
+    @Override
+    public void like(UUID id) {
+        Post post = findById(id);
+        post.setLikes(post.getLikes() + 1);
+        postRepository.save(post);
+    }
+
+    @Override
+    public void dislike(UUID id) {
+        Post post = findById(id);
+        if(post.getLikes() == 0)
+            throw new OperationNotAllowed("Operação não permitida, o número de likes não pode ser negativo");
+        post.setLikes(post.getLikes() - 1);
+        postRepository.save(post);
     }
 
     public Post dtoToPost(Post post, PostDTO dto){
