@@ -34,7 +34,7 @@ public class Pet {
     private List<Pet> following = new ArrayList<>();
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "following")
+    @ManyToMany(mappedBy = "following", cascade = CascadeType.ALL)
     private List<Pet> followers = new ArrayList<>();
 
     @JsonIgnore
