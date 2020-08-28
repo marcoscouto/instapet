@@ -3,6 +3,7 @@ package com.github.marcoscouto.instapetzup.controllers;
 import com.github.marcoscouto.instapetzup.dto.CommentDTO;
 import com.github.marcoscouto.instapetzup.models.Comment;
 import com.github.marcoscouto.instapetzup.services.impl.CommentService;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
+@Api(tags = "Comments")
 @RequestMapping("/comments")
 public class CommentController {
 

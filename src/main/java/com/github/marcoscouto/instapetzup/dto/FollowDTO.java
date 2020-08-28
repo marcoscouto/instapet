@@ -13,4 +13,5 @@ public class FollowDTO {
 
     @NotNull(message = "Seguido não pode ser nulo")
     private UUID following;
+
 }

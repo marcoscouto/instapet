@@ -3,6 +3,7 @@ package com.github.marcoscouto.instapetzup.controllers;
 import com.github.marcoscouto.instapetzup.dto.PostDTO;
 import com.github.marcoscouto.instapetzup.models.Post;
 import com.github.marcoscouto.instapetzup.services.impl.PostService;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
+@Api(tags = "Posts")
 @RequestMapping("/posts")
 public class PostController {
 
