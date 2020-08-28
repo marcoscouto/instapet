@@ -6,6 +6,7 @@ import com.github.marcoscouto.instapetzup.models.Pet;
 import com.github.marcoscouto.instapetzup.repositories.PetRepository;
 import com.github.marcoscouto.instapetzup.services.PetServiceInterface;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.UUID;
 public class PetService implements PetServiceInterface {
 
     private final PetRepository petRepository;
+    private final BCryptPasswordEncoder encoder;
 
     @Override
     public List<Pet> findAll() {
@@ -56,6 +58,8 @@ public class PetService implements PetServiceInterface {
         pet.setBreed(dto.getBreed());
         pet.setGender(dto.getGender());
         pet.setType(dto.getType());
+        pet.setEmail(dto.getEmail());
+        pet.setPassword(encoder.encode(dto.getPassword()));
         return pet;
     }
 
@@ -65,6 +69,9 @@ public class PetService implements PetServiceInterface {
         pet.setBreed(dto.getBreed());
         pet.setGender(dto.getGender());
         pet.setType(dto.getType());
+        pet.setEmail(dto.getEmail());
+        if(dto.getPassword() != null)
+            pet.setPassword(encoder.encode(dto.getPassword()));
         return pet;
     }
 

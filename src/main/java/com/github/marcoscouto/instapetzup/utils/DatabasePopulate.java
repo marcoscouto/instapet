@@ -4,13 +4,16 @@ import com.github.marcoscouto.instapetzup.models.Comment;
 import com.github.marcoscouto.instapetzup.models.Follow;
 import com.github.marcoscouto.instapetzup.models.Pet;
 import com.github.marcoscouto.instapetzup.models.Post;
+import com.github.marcoscouto.instapetzup.models.enums.Permission;
 import com.github.marcoscouto.instapetzup.repositories.CommentRepository;
 import com.github.marcoscouto.instapetzup.repositories.FollowRepository;
 import com.github.marcoscouto.instapetzup.repositories.PetRepository;
 import com.github.marcoscouto.instapetzup.repositories.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -23,6 +26,7 @@ public class DatabasePopulate implements CommandLineRunner {
     private final PostRepository postRepository;
     private final CommentRepository commentRepository;
     private final FollowRepository followRepository;
+    private final BCryptPasswordEncoder encoder;
 
     @Override
     public void run(String... args) throws Exception {
@@ -33,6 +37,9 @@ public class DatabasePopulate implements CommandLineRunner {
         pet1.setGender("Macho");
         pet1.setBreed("Salsicha");
         pet1.setBirthdate(LocalDate.of(2012, 05, 12));
+        pet1.setEmail("rex@pet.com.br");
+        pet1.setPassword(encoder.encode("123456"));
+        pet1.setPermission(Permission.ADMIN);
 
         Pet pet2 = new Pet();
         pet2.setName("Juninho");
@@ -40,6 +47,9 @@ public class DatabasePopulate implements CommandLineRunner {
         pet2.setGender("Macho");
         pet2.setBreed("Siames");
         pet2.setBirthdate(LocalDate.of(2007, 9, 01));
+        pet2.setEmail("juninho@pet.com.br");
+        pet2.setPassword(encoder.encode("123456"));
+        pet2.setPermission(Permission.USER);
 
         Pet pet3 = new Pet();
         pet3.setName("Charlie");
@@ -47,6 +57,9 @@ public class DatabasePopulate implements CommandLineRunner {
         pet3.setGender("Macho");
         pet3.setBreed("Siberiana");
         pet3.setBirthdate(LocalDate.of(1988, 2, 04));
+        pet3.setEmail("charlie@pet.com.br");
+        pet3.setPassword(encoder.encode("123456"));
+        pet3.setPermission(Permission.USER);
 
         petRepository.saveAll(Arrays.asList(pet1, pet2, pet3));
 

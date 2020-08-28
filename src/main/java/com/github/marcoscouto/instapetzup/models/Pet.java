@@ -1,9 +1,12 @@
 package com.github.marcoscouto.instapetzup.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.marcoscouto.instapetzup.models.enums.Permission;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,7 +14,8 @@ import java.util.*;
 
 @Entity
 @Table(name = "tb_pets")
-//@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Pet {
 
@@ -24,6 +28,15 @@ public class Pet {
     private String breed;
     private String gender;
     private LocalDate birthdate;
+
+    @Column(unique = true)
+    private String email;
+
+ //   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Permission permission;
 
     @JsonIgnore
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
@@ -41,83 +54,4 @@ public class Pet {
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     private List<Comment> comments = new ArrayList<>();
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getBreed() {
-        return breed;
-    }
-
-    public void setBreed(String breed) {
-        this.breed = breed;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public LocalDate getBirthdate() {
-        return birthdate;
-    }
-
-    public void setBirthdate(LocalDate birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    public Set<Post> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(Set<Post> posts) {
-        this.posts = posts;
-    }
-
-    public List<Follow> getFollowing() {
-        return following;
-    }
-
-    public void setFollowing(List<Follow> following) {
-        this.following = following;
-    }
-
-    public List<Follow> getFollowers() {
-        return followers;
-    }
-
-    public void setFollowers(List<Follow> followers) {
-        this.followers = followers;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
 }
