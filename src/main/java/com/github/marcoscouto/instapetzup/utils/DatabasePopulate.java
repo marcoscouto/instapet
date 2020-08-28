@@ -1,9 +1,11 @@
 package com.github.marcoscouto.instapetzup.utils;
 
 import com.github.marcoscouto.instapetzup.models.Comment;
+import com.github.marcoscouto.instapetzup.models.Follow;
 import com.github.marcoscouto.instapetzup.models.Pet;
 import com.github.marcoscouto.instapetzup.models.Post;
 import com.github.marcoscouto.instapetzup.repositories.CommentRepository;
+import com.github.marcoscouto.instapetzup.repositories.FollowRepository;
 import com.github.marcoscouto.instapetzup.repositories.PetRepository;
 import com.github.marcoscouto.instapetzup.repositories.PostRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +22,7 @@ public class DatabasePopulate implements CommandLineRunner {
     private final PetRepository petRepository;
     private final PostRepository postRepository;
     private final CommentRepository commentRepository;
+    private final FollowRepository followRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -47,10 +50,24 @@ public class DatabasePopulate implements CommandLineRunner {
 
         petRepository.saveAll(Arrays.asList(pet1, pet2, pet3));
 
-        pet1.getFollowing().add(pet2);
-        pet1.getFollowing().add(pet3);
-        pet3.getFollowing().add(pet2);
-        pet2.getFollowing().add(pet1);
+        Follow follow1 = new Follow();
+        follow1.setFollower(pet1);
+        follow1.setFollowing(pet2);
+
+        Follow follow2 = new Follow();
+        follow2.setFollower(pet3);
+        follow2.setFollowing(pet1);
+
+        Follow follow3 = new Follow();
+        follow3.setFollower(pet2);
+        follow3.setFollowing(pet3);
+
+        Follow follow4 = new Follow();
+        follow4.setFollower(pet1);
+        follow4.setFollowing(pet3);
+
+
+        followRepository.saveAll(Arrays.asList(follow1, follow2, follow3, follow4));
 
         // POSTS
 

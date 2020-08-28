@@ -22,13 +22,13 @@ public class FollowController {
 
     @GetMapping("/followers/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Pet> followers(@PathVariable UUID id){
+    public List<Pet> findFollowers(@PathVariable UUID id){
         return followService.findFollowers(id);
     }
 
     @GetMapping("/following/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Pet> following(@PathVariable UUID id){
+    public List<Pet> findFollowing(@PathVariable UUID id){
         return followService.findFollowing(id);
     }
 
