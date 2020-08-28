@@ -1,7 +1,9 @@
 package com.github.marcoscouto.instapetzup.services;
 
+import com.github.marcoscouto.instapetzup.dto.PermissionDTO;
 import com.github.marcoscouto.instapetzup.dto.PetDTO;
 import com.github.marcoscouto.instapetzup.models.Pet;
+import com.github.marcoscouto.instapetzup.models.enums.Permission;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,7 +18,7 @@ public interface PetServiceInterface {
 
     Pet update(UUID id, PetDTO pet);
 
-    Pet update(Pet pet);
+    void changePetPermission(UUID id, PermissionDTO permission);
 
     void delete(UUID id);
 }

@@ -28,11 +28,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserDetailsService userDetailsService;
     private final JwtUtils jwtUtils;
 
-    private final String[] PUBLIC_POST_MATCHERS = {};
+    private final String[] PUBLIC_POST_MATCHERS = {"/pets"};
 
-    private final String[] USER_MATCHERS = {};
+    private final String[] USER_MATCHERS = {"/pets/**", "/follow/**", "/posts/**", "/comments"};
 
-    private final String[] ADMIN_MATCHERS = {"/**"};
+    private final String[] ADMIN_MATCHERS = {"/admin/**"};
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -60,7 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    CorsConfigurationSource corsConfigurationSource(){
+    public CorsConfigurationSource corsConfigurationSource(){
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
         return source;

@@ -1,8 +1,10 @@
 package com.github.marcoscouto.instapetzup.services.impl;
 
+import com.github.marcoscouto.instapetzup.dto.PermissionDTO;
 import com.github.marcoscouto.instapetzup.dto.PetDTO;
 import com.github.marcoscouto.instapetzup.exceptions.NotFoundException;
 import com.github.marcoscouto.instapetzup.models.Pet;
+import com.github.marcoscouto.instapetzup.models.enums.Permission;
 import com.github.marcoscouto.instapetzup.repositories.PetRepository;
 import com.github.marcoscouto.instapetzup.services.PetServiceInterface;
 import lombok.RequiredArgsConstructor;
@@ -32,17 +34,20 @@ public class PetService implements PetServiceInterface {
 
     @Override
     public Pet save(PetDTO dto) {
-        return petRepository.save(dtoToPet(dto));
+        return petRepository.save(createPetFromDto(dto));
     }
 
     @Override
     public Pet update(UUID id, PetDTO dto) {
         Pet pet = findById(id);
-        return petRepository.save(dtoToPet(pet, dto));
+        return petRepository.save(updatePetFromDto(pet, dto));
     }
 
-    public Pet update(Pet pet) {
-        return petRepository.save(pet);
+    @Override
+    public void changePetPermission(UUID id, PermissionDTO permission) {
+        Pet pet = findById(id);
+        pet.setPermission(permission.getPermission());
+        petRepository.save(pet);
     }
 
     @Override
@@ -51,7 +56,7 @@ public class PetService implements PetServiceInterface {
         petRepository.deleteById(id);
     }
 
-    public Pet dtoToPet(PetDTO dto){
+    public Pet createPetFromDto(PetDTO dto){
         Pet pet = new Pet();
         pet.setName(dto.getName());
         pet.setBirthdate(dto.getBirthdate());
@@ -60,10 +65,11 @@ public class PetService implements PetServiceInterface {
         pet.setType(dto.getType());
         pet.setEmail(dto.getEmail());
         pet.setPassword(encoder.encode(dto.getPassword()));
+        pet.setPermission(Permission.USER);
         return pet;
     }
 
-    public Pet dtoToPet(Pet pet, PetDTO dto){
+    public Pet updatePetFromDto(Pet pet, PetDTO dto){
         pet.setName(dto.getName());
         pet.setBirthdate(dto.getBirthdate());
         pet.setBreed(dto.getBreed());
