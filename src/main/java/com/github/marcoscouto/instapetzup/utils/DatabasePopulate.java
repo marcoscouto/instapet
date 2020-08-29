@@ -31,6 +31,8 @@ public class DatabasePopulate implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        //PETS
+
         Pet pet1 = new Pet();
         pet1.setName("Rex");
         pet1.setType("Cachorro");
@@ -52,16 +54,18 @@ public class DatabasePopulate implements CommandLineRunner {
         pet2.setPermission(Permission.USER);
 
         Pet pet3 = new Pet();
-        pet3.setName("Charlie");
+        pet3.setName("Jeremias");
         pet3.setType("Tartaruga");
         pet3.setGender("Macho");
-        pet3.setBreed("Siberiana");
+        pet3.setBreed("Brasileira");
         pet3.setBirthdate(LocalDate.of(1988, 2, 04));
-        pet3.setEmail("charlie@pet.com.br");
+        pet3.setEmail("jeremias@pet.com.br");
         pet3.setPassword(encoder.encode("123456"));
         pet3.setPermission(Permission.USER);
 
         petRepository.saveAll(Arrays.asList(pet1, pet2, pet3));
+
+        //FOLLOWS
 
         Follow follow1 = new Follow();
         follow1.setFollower(pet1);
@@ -113,7 +117,6 @@ public class DatabasePopulate implements CommandLineRunner {
 
         post1.getComments().add(comment1);
         postRepository.save(post1);
-
 
     }
 }
