@@ -20,10 +20,12 @@ foi de R$ 35,4 bilhões até o terceiro trimestre de 2019 e está aquecido e em 
 
 Com a visão mudando em referência aos Pets a ideia é que exista uma Rede Social exclusiva para eles, a missão da rede
 é dar espaço para registrar ações do dia a dia como recordações e a interação dos perfis. 
+
 O perfil do Pet será independente de seu tutor, onde serão registradas as informações do mesmo, 
 bem como dará espaço a registros do dia a dia através de posts e a interação entre perfis.
 Essa interação será através de ações como seguir um perfil de outro Pet, poder visualizar, comentar e interagir com
 likes/dislikes em posts.
+
 Desta forma, com o consentimento dos usuários desta rede, é possível fazer o mapeamento de informações trazendo mais
 dados para os investidores do setor, que podem não só investir em propagandas para a rede, mas podem também realizar um
 estudo de quais produtos podem ser promissores e para quais pet em particular.
