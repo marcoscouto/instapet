@@ -1,0 +1,825 @@
+{
+  "info": {
+    "_postman_id": "e017b344-53f4-4f7f-972e-0c07ceaee780",
+    "name": "InstaPET",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Pets",
+      "item": [
+        {
+          "name": "Find All",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/pets",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find By ID",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/pets/e1246f14-5f58-4af6-bbf7-4c7e3442a926",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pets",
+                "e1246f14-5f58-4af6-bbf7-4c7e3442a926"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Save",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Benedita\",\n    \"type\": \"Gato\",\n    \"breed\": \"Siames\",\n    \"gender\": \"Fêmea\",\n    \"birthdate\": \"2013-07-09\",\n    \"email\": \"benedita@pet.com.br\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/pets",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Benedita da Silva\",\n    \"type\": \"Gato\",\n    \"breed\": \"Siames\",\n    \"gender\": \"Fêmea\",\n    \"birthdate\": \"2013-07-09\",\n    \"email\": \"benedita@pet.com.br\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/pets/b927fa3e-c965-4737-9d19-5b31ded91ec2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pets",
+                "b927fa3e-c965-4737-9d19-5b31ded91ec2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/pets/ab56c514-731b-4dd5-8a15-aeb80246fc51",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pets",
+                "ab56c514-731b-4dd5-8a15-aeb80246fc51"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Follow",
+      "item": [
+        {
+          "name": "Followers",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/pets/followers/08a0fdfa-2da4-49bf-ac48-97c002d7149c",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pets",
+                "followers",
+                "08a0fdfa-2da4-49bf-ac48-97c002d7149c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Following",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/pets/following/08a0fdfa-2da4-49bf-ac48-97c002d7149c",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pets",
+                "following",
+                "08a0fdfa-2da4-49bf-ac48-97c002d7149c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Follow",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"follower\": \"50bb42cd-69a4-4257-b6b3-2655cc13f7e2\",\n    \"following\": \"08a0fdfa-2da4-49bf-ac48-97c002d7149c\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/pets/follow",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pets",
+                "follow"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unfollow",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"follower\": \"50bb42cd-69a4-4257-b6b3-2655cc13f7e2\",\n    \"following\": \"08a0fdfa-2da4-49bf-ac48-97c002d7149c\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/pets/unfollow",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pets",
+                "unfollow"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "Find All",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/posts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find By Id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/posts/ab9ccb0d-7288-4361-a426-841388379334",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts",
+                "ab9ccb0d-7288-4361-a426-841388379334"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find By Author",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/posts/author/50bb42cd-69a4-4257-b6b3-2655cc13f7e2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts",
+                "author",
+                "50bb42cd-69a4-4257-b6b3-2655cc13f7e2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Save",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"O dia que eu comi o chinelo do tio Jorge\",\n    \"text\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer placerat, sapien sit amet ornare maximus, urna felis commodo urna, ut pellentesque velit dolor vel magna. Cras quis justo a ex sodales condimentum. Nulla lobortis pellentesque mauris quis efficitur. Morbi ac ipsum tellus. Vestibulum massa urna, porttitor egestas malesuada vitae, vulputate nec tortor. Suspendisse potenti. Sed cursus metus lacus, at faucibus nulla ultrices non. Sed vel fermentum arcu, vel dignissim sapien. Donec mollis tempus eros, quis dictum metus commodo eget.\",\n    \"author\": \"50bb42cd-69a4-4257-b6b3-2655cc13f7e2\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/posts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"O dia que eu comi o chinelo do tio Pablo\",\n    \"text\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer placerat, sapien sit amet ornare maximus, urna felis commodo urna, ut pellentesque velit dolor vel magna. Cras quis justo a ex sodales condimentum. Nulla lobortis pellentesque mauris quis efficitur. Morbi ac ipsum tellus. Vestibulum massa urna, porttitor egestas malesuada vitae, vulputate nec tortor. Suspendisse potenti. Sed cursus metus lacus, at faucibus nulla ultrices non. Sed vel fermentum arcu, vel dignissim sapien. Donec mollis tempus eros, quis dictum metus commodo eget.\",\n    \"author\": \"50bb42cd-69a4-4257-b6b3-2655cc13f7e2\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/posts/ab9ccb0d-7288-4361-a426-841388379334",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts",
+                "ab9ccb0d-7288-4361-a426-841388379334"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Like Post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/posts/ab9ccb0d-7288-4361-a426-841388379334/like",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts",
+                "ab9ccb0d-7288-4361-a426-841388379334",
+                "like"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Dislike Post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/posts/ab9ccb0d-7288-4361-a426-841388379334/dislike",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts",
+                "ab9ccb0d-7288-4361-a426-841388379334",
+                "dislike"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/posts/32d8da5a-5f65-4fd5-9e0d-d5f3f16701b6",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "posts",
+                "32d8da5a-5f65-4fd5-9e0d-d5f3f16701b6"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "Find By Post",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/comments/post/e7050671-bb4b-4ff3-a7af-01dc7046e851",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "comments",
+                "post",
+                "e7050671-bb4b-4ff3-a7af-01dc7046e851"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find By Author",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/comments/author/8a23dc94-31cb-46b6-8774-4bec4a3c1d7d",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "comments",
+                "author",
+                "8a23dc94-31cb-46b6-8774-4bec4a3c1d7d"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find By Id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/comments/c0564f13-b95e-40c1-8036-3b9c14170a35",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "comments",
+                "c0564f13-b95e-40c1-8036-3b9c14170a35"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Save",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"author\": \"e10316f8-0062-42cd-af20-51c5aa17788f\",\n    \"post\": \"5474a134-8e04-4d1b-9174-c0c449223101\",\n    \"text\": \"Gostei também\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"author\": \"e10316f8-0062-42cd-af20-51c5aa17788f\",\n    \"post\": \"e84b7357-a8e7-4306-b23f-db29b24bf76b\",\n    \"text\": \"Gostei também\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/comments/c0564f13-b95e-40c1-8036-3b9c14170a35",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "comments",
+                "c0564f13-b95e-40c1-8036-3b9c14170a35"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/comments/c0564f13-b95e-40c1-8036-3b9c14170a35",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "comments",
+                "c0564f13-b95e-40c1-8036-3b9c14170a35"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Login",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"rex@pet.com.bra\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Change Pet Permission",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"permission\": \"ADMIN\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/admin/changepermission/e1246f14-5f58-4af6-bbf7-4c7e3442a926",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "admin",
+                "changepermission",
+                "e1246f14-5f58-4af6-bbf7-4c7e3442a926"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
