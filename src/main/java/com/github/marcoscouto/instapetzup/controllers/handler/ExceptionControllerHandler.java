@@ -5,6 +5,7 @@ import com.github.marcoscouto.instapetzup.exceptions.OperationNotAllowed;
 import com.github.marcoscouto.instapetzup.exceptions.StandardError;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

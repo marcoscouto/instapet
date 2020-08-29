@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final String[] PUBLIC_POST_MATCHERS = {"/pets"};
 
-    private final String[] USER_MATCHERS = {"/pets/**", "/follow/**", "/posts/**", "/comments"};
+    private final String[] USER_MATCHERS = {"/pets/**", "/follow/**", "/posts/**", "/comments/**"};
 
     private final String[] ADMIN_MATCHERS = {"/admin/**"};
 

@@ -42,7 +42,7 @@ public class JwtUtils {
     }
 
     private Date getExpirationDate() {
-        return new Date(System.currentTimeMillis() + (expiration * 1000));
+        return new Date(System.currentTimeMillis() + (expiration));
     }
 
     private Claims getClaims(String token) {

@@ -33,6 +33,7 @@ public class PetDTO {
     @Email(message = "O email tem que ser válido")
     private String email;
 
+    @NotBlank(message = "Senha não pode ser nula")
     @Size(min = 6, max = 50, message = "A senha deve ter no mínimo 6 caracteres e no máximo 50")
     private String password;
 

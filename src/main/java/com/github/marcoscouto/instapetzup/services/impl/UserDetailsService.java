@@ -19,6 +19,7 @@ public class UserDetailsService implements org.springframework.security.core.use
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Pet pet = petRepository.findByEmail(email)
                 .orElseThrow(() -> new NotFoundException("Pet não encontrado - Email: " + email));
+
         return User.builder()
                 .username(pet.getEmail())
                 .password(pet.getPassword())

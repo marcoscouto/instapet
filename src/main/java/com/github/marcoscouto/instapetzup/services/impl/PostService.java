@@ -50,6 +50,7 @@ public class PostService implements PostServiceInterface {
 
     @Override
     public void delete(UUID id) {
+        findById(id);
         postRepository.deleteById(id);
     }
 
