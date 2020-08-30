@@ -3,6 +3,7 @@ package com.github.marcoscouto.instapetzup.controllers;
 import com.github.marcoscouto.instapetzup.dto.PermissionDTO;
 import com.github.marcoscouto.instapetzup.services.impl.PetService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ public class AdminController {
 
     private final PetService petService;
 
+    @ApiOperation("Mudar permissão do Pet")
     @PostMapping("/changepermission/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void changePetPermission(@PathVariable UUID id, @Valid @RequestBody PermissionDTO permission){
