@@ -37,6 +37,31 @@ O desafio consiste em criar uma rede social do zero com funcionalidades.
 A rede escolhida então foi um esboço de Instagram exclusivo para o perfil de Pets visando a aproximação de 
 tutores de pets, investidores deste mercado e de certa forma os próprios pets.
 
+### Inicializando a aplicação
+
+Clone este repositório e na pasta raiz do projeto digite o seguinte código:
+
+>mvn spring-boot:run
+
+O projeto está configurado para rodar na porta 8080, sendo assim o acesso dele
+será através do link:
+
+> http://localhost:8080
+
+Para gerar o Token de acesso utiliza o endpoint **/login** com as seguintes
+credenciais:
+
+>{
+>	"email": "rex@pet.com.br",
+>   "password": "123456"
+>}
+
+Com isto a aplicação retornará no cabeçalho de resposta o Token de autorização. 
+
+É necessário em todas as outras requisições, exceto a de criação de um novo Pet, a inserção no cabeçalho da requisição uma propriedade de chave **Authorization** e como valor o Token com o sufixo **Bearer**.
+
+Este projeto contém uma classe nomeada DatabasePopulate que popula a base de dados com algumas informações para teste.
+
 ### Funcionalidades
 
 A rede conta com as seguintes funcionalidades:
@@ -53,15 +78,16 @@ A rede conta com as seguintes funcionalidades:
 
 ### Endpoints
 
-Todos os endpoints estão disponíveis através do Swagger, ao executar a aplicação acesse a documentação através do
-link - http://localhost:8080/swagger-ui.html
+Todos os endpoints estão disponíveis através do Swagger, ao executar a aplicação acesse a documentação através do link:
 
-Existe um arquivo chamado Instapet-Postman.json no projeto pré-configurado para testes que pode ser importado
+>http://localhost:8080/swagger-ui.html
+
+Existe um arquivo chamado **Instapet-Postman.json** no projeto pré-configurado para testes que pode ser importado
 no programa Postman.
 
 ### Tecnologias Utilizadas
 
-* Java 11+
+* Java 11
 
 * Spring Boot (Spring Data (JPA), Spring Security, Spring Web)
 

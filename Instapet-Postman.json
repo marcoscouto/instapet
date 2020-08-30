@@ -58,13 +58,13 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/pets/e1246f14-5f58-4af6-bbf7-4c7e3442a926",
+              "raw": "{{base_url}}/pets/b0ba0d0b-b24c-4021-8ea6-ced021b896c9",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "pets",
-                "e1246f14-5f58-4af6-bbf7-4c7e3442a926"
+                "b0ba0d0b-b24c-4021-8ea6-ced021b896c9"
               ]
             }
           },
@@ -121,13 +121,13 @@
               }
             },
             "url": {
-              "raw": "{{base_url}}/pets/b927fa3e-c965-4737-9d19-5b31ded91ec2",
+              "raw": "{{base_url}}/pets/9bc24688-4c40-40d2-8b44-d08c4136b5ab",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "pets",
-                "b927fa3e-c965-4737-9d19-5b31ded91ec2"
+                "9bc24688-4c40-40d2-8b44-d08c4136b5ab"
               ]
             }
           },
@@ -149,13 +149,13 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/pets/ab56c514-731b-4dd5-8a15-aeb80246fc51",
+              "raw": "{{base_url}}/pets/9bc24688-4c40-40d2-8b44-d08c4136b5ab",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "pets",
-                "ab56c514-731b-4dd5-8a15-aeb80246fc51"
+                "9bc24688-4c40-40d2-8b44-d08c4136b5ab"
               ]
             }
           },
@@ -183,14 +183,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/pets/followers/08a0fdfa-2da4-49bf-ac48-97c002d7149c",
+              "raw": "{{base_url}}/pets/followers/b5b00420-449c-448b-9f6d-5f69e835eb2f",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "pets",
                 "followers",
-                "08a0fdfa-2da4-49bf-ac48-97c002d7149c"
+                "b5b00420-449c-448b-9f6d-5f69e835eb2f"
               ]
             }
           },
@@ -212,14 +212,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/pets/following/08a0fdfa-2da4-49bf-ac48-97c002d7149c",
+              "raw": "{{base_url}}/pets/following/b0ba0d0b-b24c-4021-8ea6-ced021b896c9",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "pets",
                 "following",
-                "08a0fdfa-2da4-49bf-ac48-97c002d7149c"
+                "b0ba0d0b-b24c-4021-8ea6-ced021b896c9"
               ]
             }
           },
@@ -242,7 +242,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"follower\": \"50bb42cd-69a4-4257-b6b3-2655cc13f7e2\",\n    \"following\": \"08a0fdfa-2da4-49bf-ac48-97c002d7149c\"\n}",
+              "raw": "{\n    \"follower\": \"b0ba0d0b-b24c-4021-8ea6-ced021b896c9\",\n    \"following\": \"b5b00420-449c-448b-9f6d-5f69e835eb2f\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -279,7 +279,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"follower\": \"50bb42cd-69a4-4257-b6b3-2655cc13f7e2\",\n    \"following\": \"08a0fdfa-2da4-49bf-ac48-97c002d7149c\"\n}",
+              "raw": "{\n    \"follower\": \"b0ba0d0b-b24c-4021-8ea6-ced021b896c9\",\n    \"following\": \"b5b00420-449c-448b-9f6d-5f69e835eb2f\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -348,13 +348,13 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/posts/ab9ccb0d-7288-4361-a426-841388379334",
+              "raw": "{{base_url}}/posts/6729f049-75db-4493-8165-cb96ef53ce96",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "posts",
-                "ab9ccb0d-7288-4361-a426-841388379334"
+                "6729f049-75db-4493-8165-cb96ef53ce96"
               ]
             }
           },
@@ -376,14 +376,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/posts/author/50bb42cd-69a4-4257-b6b3-2655cc13f7e2",
+              "raw": "{{base_url}}/posts/author/b5b00420-449c-448b-9f6d-5f69e835eb2f",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "posts",
                 "author",
-                "50bb42cd-69a4-4257-b6b3-2655cc13f7e2"
+                "b5b00420-449c-448b-9f6d-5f69e835eb2f"
               ]
             }
           },
@@ -406,7 +406,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"title\": \"O dia que eu comi o chinelo do tio Jorge\",\n    \"text\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer placerat, sapien sit amet ornare maximus, urna felis commodo urna, ut pellentesque velit dolor vel magna. Cras quis justo a ex sodales condimentum. Nulla lobortis pellentesque mauris quis efficitur. Morbi ac ipsum tellus. Vestibulum massa urna, porttitor egestas malesuada vitae, vulputate nec tortor. Suspendisse potenti. Sed cursus metus lacus, at faucibus nulla ultrices non. Sed vel fermentum arcu, vel dignissim sapien. Donec mollis tempus eros, quis dictum metus commodo eget.\",\n    \"author\": \"50bb42cd-69a4-4257-b6b3-2655cc13f7e2\"\n}",
+              "raw": "{\n    \"title\": \"O dia que eu comi o chinelo do tio Jorge\",\n    \"text\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer placerat, sapien sit amet ornare maximus, urna felis commodo urna, ut pellentesque velit dolor vel magna. Cras quis justo a ex sodales condimentum. Nulla lobortis pellentesque mauris quis efficitur. Morbi ac ipsum tellus. Vestibulum massa urna, porttitor egestas malesuada vitae, vulputate nec tortor. Suspendisse potenti. Sed cursus metus lacus, at faucibus nulla ultrices non. Sed vel fermentum arcu, vel dignissim sapien. Donec mollis tempus eros, quis dictum metus commodo eget.\",\n    \"author\": \"b0ba0d0b-b24c-4021-8ea6-ced021b896c9\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -478,13 +478,13 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/posts/ab9ccb0d-7288-4361-a426-841388379334/like",
+              "raw": "{{base_url}}/posts/6729f049-75db-4493-8165-cb96ef53ce96/like",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "posts",
-                "ab9ccb0d-7288-4361-a426-841388379334",
+                "6729f049-75db-4493-8165-cb96ef53ce96",
                 "like"
               ]
             }
@@ -507,13 +507,13 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/posts/ab9ccb0d-7288-4361-a426-841388379334/dislike",
+              "raw": "{{base_url}}/posts/6729f049-75db-4493-8165-cb96ef53ce96/dislike",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "posts",
-                "ab9ccb0d-7288-4361-a426-841388379334",
+                "6729f049-75db-4493-8165-cb96ef53ce96",
                 "dislike"
               ]
             }
@@ -536,13 +536,13 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/posts/32d8da5a-5f65-4fd5-9e0d-d5f3f16701b6",
+              "raw": "{{base_url}}/posts/6729f049-75db-4493-8165-cb96ef53ce96",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "posts",
-                "32d8da5a-5f65-4fd5-9e0d-d5f3f16701b6"
+                "6729f049-75db-4493-8165-cb96ef53ce96"
               ]
             }
           },
@@ -570,14 +570,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/comments/post/e7050671-bb4b-4ff3-a7af-01dc7046e851",
+              "raw": "{{base_url}}/comments/post/7e34182d-01fa-449f-afd3-a65cdf82f315",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "comments",
                 "post",
-                "e7050671-bb4b-4ff3-a7af-01dc7046e851"
+                "7e34182d-01fa-449f-afd3-a65cdf82f315"
               ]
             }
           },
@@ -628,13 +628,13 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/comments/c0564f13-b95e-40c1-8036-3b9c14170a35",
+              "raw": "{{base_url}}/comments/399c7e5f-cfa9-447c-8dec-9965caa89327",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "comments",
-                "c0564f13-b95e-40c1-8036-3b9c14170a35"
+                "399c7e5f-cfa9-447c-8dec-9965caa89327"
               ]
             }
           },
@@ -657,7 +657,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"author\": \"e10316f8-0062-42cd-af20-51c5aa17788f\",\n    \"post\": \"5474a134-8e04-4d1b-9174-c0c449223101\",\n    \"text\": \"Gostei também\"\n}",
+              "raw": "{\n    \"author\": \"b5b00420-449c-448b-9f6d-5f69e835eb2f\",\n    \"post\": \"7e34182d-01fa-449f-afd3-a65cdf82f315\",\n    \"text\": \"Gostei do seu post!\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -693,7 +693,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"author\": \"e10316f8-0062-42cd-af20-51c5aa17788f\",\n    \"post\": \"e84b7357-a8e7-4306-b23f-db29b24bf76b\",\n    \"text\": \"Gostei também\"\n}",
+              "raw": "{\n    \"author\": \"b5b00420-449c-448b-9f6d-5f69e835eb2f\",\n    \"post\": \"7e34182d-01fa-449f-afd3-a65cdf82f315\",\n    \"text\": \"Li e gostei do seu post!\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -701,13 +701,13 @@
               }
             },
             "url": {
-              "raw": "{{base_url}}/comments/c0564f13-b95e-40c1-8036-3b9c14170a35",
+              "raw": "{{base_url}}/comments/399c7e5f-cfa9-447c-8dec-9965caa89327",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "comments",
-                "c0564f13-b95e-40c1-8036-3b9c14170a35"
+                "399c7e5f-cfa9-447c-8dec-9965caa89327"
               ]
             }
           },
@@ -729,13 +729,13 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/comments/c0564f13-b95e-40c1-8036-3b9c14170a35",
+              "raw": "{{base_url}}/comments/399c7e5f-cfa9-447c-8dec-9965caa89327",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "comments",
-                "c0564f13-b95e-40c1-8036-3b9c14170a35"
+                "399c7e5f-cfa9-447c-8dec-9965caa89327"
               ]
             }
           },
@@ -754,7 +754,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"email\": \"rex@pet.com.bra\",\n    \"password\": \"123456\"\n}",
+              "raw": "{\n    \"email\": \"rex@pet.com.br\",\n    \"password\": \"123456\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -804,14 +804,14 @@
               }
             },
             "url": {
-              "raw": "{{base_url}}/admin/changepermission/e1246f14-5f58-4af6-bbf7-4c7e3442a926",
+              "raw": "{{base_url}}/admin/changepermission/b0ba0d0b-b24c-4021-8ea6-ced021b896c9",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "admin",
                 "changepermission",
-                "e1246f14-5f58-4af6-bbf7-4c7e3442a926"
+                "b0ba0d0b-b24c-4021-8ea6-ced021b896c9"
               ]
             }
           },
